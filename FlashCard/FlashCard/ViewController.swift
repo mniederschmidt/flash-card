@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  FlashCardApp
+//  FlashCard
 //
-//  Created by Mary Niederschmidt on 8/9/17.
+//  Created by Mary Niederschmidt on 8/20/17.
 //  Copyright © 2017 Mary Niederschmidt. All rights reserved.
 //
 
@@ -15,13 +15,12 @@ class ViewController: UIViewController {
     }
     
     var flashCardModel: FlashCardModel?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         flashCardModel = FlashCardModel()
-        
     }
-}
 
+}
 

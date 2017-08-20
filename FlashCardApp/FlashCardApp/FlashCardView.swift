@@ -8,16 +8,9 @@
 
 import UIKit
 
-//protocol FlashCardViewDelegate: class {
-//    func flashCardTouched(currentDisplay: String)
-//    func nextButtonPressed()
-//    func previousButtonPressed()
-//}
-
 class FlashCardView: UIView {
 
 
-//    weak var delegate: FlashCardViewDelegate?
     
     
 }
