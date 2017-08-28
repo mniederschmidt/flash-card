@@ -19,8 +19,35 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        flashCardView.delegate = self
+
         flashCardModel = FlashCardModel()
+        
+        let firstTerm = flashCardModel?.nextTerm()
+        flashCardView.flashCard.setTitle(firstTerm, for: .normal)
     }
+}
+
+extension ViewController: FlashCardViewDelegate {
+    func flashCardPressed(currentDisplay: String) {
+        let newText = flashCardModel?.flipCard(currentDisplay: currentDisplay) ?? ""
+    
+        flashCardView.flashCard.setTitle(newText, for: .normal)
+    }
+    
+    func previousButtonPressed() {
+        let newText = flashCardModel?.previousTerm() ?? ""
+        
+        flashCardView.flashCard.setTitle(newText, for: .normal)
+    }
+
+    func nextButtonPressed() {
+        let newText = flashCardModel?.nextTerm() ?? ""
+    
+        flashCardView.flashCard.setTitle(newText, for: .normal)
+    }
+    
+
 
 }
 

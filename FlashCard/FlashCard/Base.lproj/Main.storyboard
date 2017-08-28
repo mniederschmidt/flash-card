@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +22,72 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="FlashCardView" customModule="FlashCard" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZg-OU-XIY">
+                                <rect key="frame" x="99" y="419" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.71903186075029468" green="1" blue="0.73013608454464873" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JZg-OU-XIY" secondAttribute="height" multiplier="23:15" id="HO9-KE-n5Z"/>
+                                    <constraint firstAttribute="height" constant="30" id="MGm-Ek-Q3X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="previousButtonPressed:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="lk0-7v-eIy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17w-yl-ciK">
+                                <rect key="frame" x="242" y="419" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.71903186075029468" green="1" blue="0.73013608454464873" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TVk-k1-fuc"/>
+                                    <constraint firstAttribute="width" secondItem="17w-yl-ciK" secondAttribute="height" multiplier="23:15" id="u6e-5y-evg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="&gt;">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="QYH-Cf-F4Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WeP-4R-0IF">
+                                <rect key="frame" x="31" y="126" width="313" height="234"/>
+                                <color key="backgroundColor" red="0.80572319397890435" green="0.9928486906633639" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="234" id="KGM-0m-no0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="flashCardPressed:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="1h7-Ze-Yyn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="17w-yl-ciK" firstAttribute="top" secondItem="WeP-4R-0IF" secondAttribute="bottom" constant="59" id="GVL-mj-PVS"/>
+                            <constraint firstItem="WeP-4R-0IF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="106" id="cC1-nB-Kxh"/>
+                            <constraint firstItem="JZg-OU-XIY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="83" id="ddt-Af-1mH"/>
+                            <constraint firstItem="JZg-OU-XIY" firstAttribute="width" secondItem="WeP-4R-0IF" secondAttribute="height" multiplier="23:117" id="eWW-hD-3e9"/>
+                            <constraint firstItem="WeP-4R-0IF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f3D-Sf-xtj"/>
+                            <constraint firstItem="17w-yl-ciK" firstAttribute="width" secondItem="WeP-4R-0IF" secondAttribute="height" multiplier="23:117" id="j1w-Uv-1NC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="17w-yl-ciK" secondAttribute="trailing" constant="71" id="nhf-gY-h45"/>
+                            <constraint firstItem="WeP-4R-0IF" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="313:667" id="qD9-pg-gQu"/>
+                            <constraint firstItem="JZg-OU-XIY" firstAttribute="top" secondItem="WeP-4R-0IF" secondAttribute="bottom" constant="59" id="zFu-Xy-L2v"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="flashCard" destination="WeP-4R-0IF" id="Irm-mB-ifX"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
         </scene>
     </scenes>
 </document>
